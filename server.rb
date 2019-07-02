@@ -34,6 +34,11 @@ def self.find(id)
   return @user
 end
 
+def delete?(id)
+  @user = db.execute("DELETE FROM users WHERE id = '#{id} '")
+  return @user
+end
+
 get "/" do
   erb :home
 end
